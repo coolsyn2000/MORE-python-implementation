@@ -48,7 +48,7 @@ def process_image(image_path, d=15, kernel_size=(7, 7), sigma=2, crop=3600):
     return processed_image
 
 
-# implementation of MORE algorithm
+# implementation of MORE algorithm sup_size should be set as close to the object's size as possible
 def MORE(speckle_list, num_epoch=5, sup_size=(200, 200)):
     speckles_FFTM = list()
     speckles_FFTP = list()
@@ -99,6 +99,7 @@ def MORE(speckle_list, num_epoch=5, sup_size=(200, 200)):
         obj = obj[(height // 2) - (rx // 2):(height // 2) + (rx // 2),
               (width // 2) - (ry // 2):(width // 2) + (ry // 2)]
         obj = (obj - np.min(obj)) / (np.max(obj) - np.min(obj))
+        obj = np.fliplr(obj)
         objs_list.append(obj)
 
     return objs_list, OTF
@@ -113,7 +114,7 @@ def savefigs(images, title, save_path):
         plt.imshow(img, cmap='hot')
         plt.axis('off')
 
-    plt.savefig(save_path, dpi=300)
+    plt.savefig(save_path, dpi=300, transparent=True)
     plt.show()
 
 

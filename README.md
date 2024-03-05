@@ -1,18 +1,18 @@
 # Python Implementation of Multi-frame OTF Retrieval Engine (MORE) algorithm
 
-MORE is an algorithm, which can reconstruction scattered objects with better quality. It has been proved that it works well under broadband illumination and underexposure scenes.
+MORE is an algorithm, which can reconstruction scattered objects with poor quality speckles. It has been proved that it works well under broadband illumination and underexposure scenes.
 
 ## Experiment
 
 <b>Non-invasive imaging through scatter medium within memory effect</b>
 
-![](./assets/experiment_setup.jpg)
+![](./assets/experiment_setup.png)
 
 ## Algorithm
 
 Different from single-frame phase recovery algorithms such as HIO and ER, MORE achieves object reconstruction by <b>captured multi-frame speckle information to retrieval the optical transfer function</b> of the imaging system.
 
-![](./assets/MORE_block_diagram.jpg)
+![](./assets/MORE_block_diagram.png)
 
 ## Usage
 
